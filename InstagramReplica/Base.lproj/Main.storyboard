@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2W9-Wc-gP5">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOu-ko-OZh" customClass="DesignableButton" customModule="InstagramReplica" customModuleProvider="target">
+                                <rect key="frame" x="79" y="421" width="257" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="MSs-Tc-5xq" kind="show" identifier="" id="wkA-ge-4t7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kci-ha-LbC" customClass="DesignableButton" customModule="InstagramReplica" customModuleProvider="target">
+                                <rect key="frame" x="79" y="496" width="257" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="q3O-eq-YLp" kind="show" id="S0C-Rt-DU9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to your app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZ7-Cb-Psc">
+                                <rect key="frame" x="27" y="225" width="360" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Build your own social" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-Oy-5Jy">
+                                <rect key="frame" x="99" y="308" width="217" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="network in minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qru-JR-9Nu">
+                                <rect key="frame" x="110" y="339" width="195" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tlm-fj-1U6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="dzZ-vN-BTX">
+            <objects>
+                <viewController id="MSs-Tc-5xq" customClass="SignInViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LTw-FF-BmF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7t-1s-vH9">
+                                <rect key="frame" x="20" y="166" width="114" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geV-mj-l8x" customClass="DesignableButton" customModule="InstagramReplica" customModuleProvider="target">
+                                <rect key="frame" x="83" y="419" width="257" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginDidTouch:" destination="MSs-Tc-5xq" eventType="touchUpInside" id="9ur-pw-leA"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="miY-cp-1Un" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                                <rect key="frame" x="58" y="261" width="307" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EfI-pq-IUM" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                                <rect key="frame" x="58" y="322" width="307" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="WCa-4t-6xd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9S0-Zk-4v2"/>
+                    <connections>
+                        <outlet property="textFieldLoginEmail" destination="miY-cp-1Un" id="D6P-mf-QL5"/>
+                        <outlet property="textFieldLoginPassword" destination="EfI-pq-IUM" id="SLr-Bh-X2I"/>
+                        <segue destination="avB-VN-qfu" kind="presentation" identifier="signInToApp" id="RU0-51-d9J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ISA-sp-nDp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031.8840579710145" y="115.84821428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="d0a-wd-C7c">
+            <objects>
+                <viewController id="avB-VN-qfu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="69W-HR-x6m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7r-NK-cH5">
+                                <rect key="frame" x="208" y="379" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="1Xe-yJ-jSH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g4q-P4-m2x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877" y="116"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="isC-ms-u7F">
+            <objects>
+                <viewController id="q3O-eq-YLp" customClass="SignUpViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eax-wU-zNk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waN-Vh-PBo">
+                                <rect key="frame" x="23" y="150" width="257" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vX0-mQ-E2Q" customClass="DesignableButton" customModule="InstagramReplica" customModuleProvider="target">
+                                <rect key="frame" x="79" y="481" width="257" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.26274510422922387" blue="0.54525582901554404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpDidTouch:" destination="q3O-eq-YLp" eventType="touchUpInside" id="lZ4-kQ-3f0"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rn1-qJ-TfU" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                                <rect key="frame" x="54" y="349" width="307" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hu1-m5-xnP" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                                <rect key="frame" x="54" y="217" width="307" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i1n-2h-pCN" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                                <rect key="frame" x="54" y="283" width="307" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="skU-RP-UdO" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                                <rect key="frame" x="54" y="415" width="307" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="waN-Vh-PBo" firstAttribute="top" secondItem="6yd-JD-4LC" secondAttribute="top" constant="62" id="0Sb-q2-PWQ"/>
+                            <constraint firstItem="Rn1-qJ-TfU" firstAttribute="leading" secondItem="6yd-JD-4LC" secondAttribute="leading" constant="54" id="0vk-vm-yPF"/>
+                            <constraint firstItem="waN-Vh-PBo" firstAttribute="leading" secondItem="6yd-JD-4LC" secondAttribute="leading" constant="23" id="50G-4O-CrA"/>
+                            <constraint firstItem="i1n-2h-pCN" firstAttribute="top" secondItem="hu1-m5-xnP" secondAttribute="bottom" constant="32" id="59j-ph-Yl7"/>
+                            <constraint firstItem="6yd-JD-4LC" firstAttribute="trailing" secondItem="waN-Vh-PBo" secondAttribute="trailing" constant="134" id="6Iz-Ac-nhS"/>
+                            <constraint firstItem="hu1-m5-xnP" firstAttribute="leading" secondItem="6yd-JD-4LC" secondAttribute="leading" constant="54" id="8FZ-Tj-Xm1"/>
+                            <constraint firstItem="6yd-JD-4LC" firstAttribute="trailing" secondItem="Rn1-qJ-TfU" secondAttribute="trailing" constant="53" id="AZR-2z-CVa"/>
+                            <constraint firstItem="hu1-m5-xnP" firstAttribute="top" secondItem="waN-Vh-PBo" secondAttribute="bottom" constant="32" id="BfZ-ei-iUS"/>
+                            <constraint firstItem="6yd-JD-4LC" firstAttribute="trailing" secondItem="i1n-2h-pCN" secondAttribute="trailing" constant="53" id="GLD-Z2-mTf"/>
+                            <constraint firstItem="i1n-2h-pCN" firstAttribute="leading" secondItem="6yd-JD-4LC" secondAttribute="leading" constant="54" id="ILV-ft-dZd"/>
+                            <constraint firstItem="skU-RP-UdO" firstAttribute="leading" secondItem="6yd-JD-4LC" secondAttribute="leading" constant="54" id="R7g-6A-fIq"/>
+                            <constraint firstItem="skU-RP-UdO" firstAttribute="top" secondItem="Rn1-qJ-TfU" secondAttribute="bottom" constant="32" id="ZOV-45-sRR"/>
+                            <constraint firstItem="6yd-JD-4LC" firstAttribute="trailing" secondItem="skU-RP-UdO" secondAttribute="trailing" constant="53" id="hcw-St-VTq"/>
+                            <constraint firstItem="6yd-JD-4LC" firstAttribute="trailing" secondItem="vX0-mQ-E2Q" secondAttribute="trailing" constant="78" id="i3g-RG-EQ1"/>
+                            <constraint firstItem="vX0-mQ-E2Q" firstAttribute="leading" secondItem="6yd-JD-4LC" secondAttribute="leading" constant="79" id="pHT-Wu-YXH"/>
+                            <constraint firstItem="Rn1-qJ-TfU" firstAttribute="top" secondItem="i1n-2h-pCN" secondAttribute="bottom" constant="32" id="pOb-mQ-dmU"/>
+                            <constraint firstItem="6yd-JD-4LC" firstAttribute="trailing" secondItem="hu1-m5-xnP" secondAttribute="trailing" constant="53" id="qRF-gb-dDG"/>
+                            <constraint firstItem="vX0-mQ-E2Q" firstAttribute="top" secondItem="skU-RP-UdO" secondAttribute="bottom" constant="32" id="yNu-Qx-t4y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6yd-JD-4LC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="shj-Kr-1a9"/>
+                    <connections>
+                        <outlet property="textFieldFullName" destination="hu1-m5-xnP" id="sg9-bC-uPK"/>
+                        <outlet property="textFieldLoginEmail" destination="Rn1-qJ-TfU" id="qoL-Z6-GNL"/>
+                        <outlet property="textFieldLoginPassword" destination="skU-RP-UdO" id="ZDo-6S-ZEJ"/>
+                        <outlet property="textFieldPhoneNumber" destination="i1n-2h-pCN" id="aBY-65-cj8"/>
+                        <segue destination="avB-VN-qfu" kind="presentation" identifier="signInToApp" id="LdZ-Sd-MVd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8E-1q-rcp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="806.91964285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iyp-JQ-j6o">
+            <objects>
+                <navigationController id="2W9-Wc-gP5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8zW-xI-sn6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="BQD-hB-4Rb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hW9-P2-PYX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-749" y="116"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="RU0-51-d9J"/>
+    </inferredMetricsTieBreakers>
+</document>
