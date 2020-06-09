@@ -10,14 +10,22 @@ import UIKit
 import Firebase
 
 class WelcomeViewController: UIViewController {
+    
+    let signInToApp = "signInToApp"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // sign out
-         let user = Auth.auth().currentUser
-         let onlineRef = Database.database().reference(withPath: "online/\(user?.uid)")
         
-         onlineRef.removeValue { (error, _) in
+        Auth.auth().addStateDidChangeListener() { auth, user in
+            if user != nil {
+                self.performSegue(withIdentifier: self.signInToApp, sender: nil)
+            }
+        }
+        /*// sign out
+        let user = Auth.auth().currentUser
+        let onlineRef = Database.database().reference(withPath: "online/\(user?.uid)")
+        
+        onlineRef.removeValue { (error, _) in
             if let error = error {
                 print("Removing online failed: \(error)")
                 return
@@ -29,7 +37,7 @@ class WelcomeViewController: UIViewController {
             } catch (let error) {
                 print("Auth sign out failed: \(error)")
             }
-        }
+        }*/
     }
 }
 

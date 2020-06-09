@@ -18,6 +18,12 @@
 		BA243394248E749D00C1CB55 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA243393248E749D00C1CB55 /* SignUpViewController.swift */; };
 		BA243396248E813700C1CB55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA243395248E813700C1CB55 /* GoogleService-Info.plist */; };
 		BA243398248E89C600C1CB55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA243397248E89C600C1CB55 /* User.swift */; };
+		BAAAE15B248FFEFA00ED2D68 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */; };
+		BAAAE15D24901F6B00ED2D68 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE15C24901F6B00ED2D68 /* FeedViewController.swift */; };
+		BAAAE1602490227700ED2D68 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE15F2490227700ED2D68 /* DiscoverViewController.swift */; };
+		BAAAE1622490228200ED2D68 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1612490228200ED2D68 /* ChatViewController.swift */; };
+		BAAAE1642490228C00ED2D68 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1632490228C00ED2D68 /* FriendsViewController.swift */; };
+		BAAAE1662490229800ED2D68 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1652490229800ED2D68 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +42,12 @@
 		BA243393248E749D00C1CB55 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BA243395248E813700C1CB55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA243397248E89C600C1CB55 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		BAAAE15C24901F6B00ED2D68 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		BAAAE15F2490227700ED2D68 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		BAAAE1612490228200ED2D68 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		BAAAE1632490228C00ED2D68 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		BAAAE1652490229800ED2D68 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +117,24 @@
 			isa = PBXGroup;
 			children = (
 				BA243380248E623F00C1CB55 /* WelcomeViewController.swift */,
+				BAAAE15E2490225700ED2D68 /* Tab Bar Controllers */,
 				BA243391248E6E7500C1CB55 /* SignInViewController.swift */,
 				BA243393248E749D00C1CB55 /* SignUpViewController.swift */,
+				BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BAAAE15E2490225700ED2D68 /* Tab Bar Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BAAAE15C24901F6B00ED2D68 /* FeedViewController.swift */,
+				BAAAE15F2490227700ED2D68 /* DiscoverViewController.swift */,
+				BAAAE1612490228200ED2D68 /* ChatViewController.swift */,
+				BAAAE1632490228C00ED2D68 /* FriendsViewController.swift */,
+				BAAAE1652490229800ED2D68 /* ProfileViewController.swift */,
+			);
+			path = "Tab Bar Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,12 +235,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAAAE1602490227700ED2D68 /* DiscoverViewController.swift in Sources */,
 				BA243392248E6E7500C1CB55 /* SignInViewController.swift in Sources */,
 				BA243381248E623F00C1CB55 /* WelcomeViewController.swift in Sources */,
 				BA243398248E89C600C1CB55 /* User.swift in Sources */,
 				BA24337D248E623F00C1CB55 /* AppDelegate.swift in Sources */,
 				BA24337F248E623F00C1CB55 /* SceneDelegate.swift in Sources */,
+				BAAAE1662490229800ED2D68 /* ProfileViewController.swift in Sources */,
+				BAAAE1642490228C00ED2D68 /* FriendsViewController.swift in Sources */,
 				BA243394248E749D00C1CB55 /* SignUpViewController.swift in Sources */,
+				BAAAE15D24901F6B00ED2D68 /* FeedViewController.swift in Sources */,
+				BAAAE1622490228200ED2D68 /* ChatViewController.swift in Sources */,
+				BAAAE15B248FFEFA00ED2D68 /* TabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
