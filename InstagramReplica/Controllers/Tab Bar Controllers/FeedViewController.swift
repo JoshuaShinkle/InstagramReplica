@@ -9,54 +9,56 @@
 import UIKit
 import Firebase
 
-class FeedViewController: UIViewController {
-        
-    @IBOutlet var fullNameLabel: UILabel!
-    @IBOutlet var captionLabel: UILabel!
-    @IBOutlet var profileImage: UIImageView!
-    @IBOutlet var newsFeed: UITableView!
+class FeedViewController: UITableViewController {
     
     let ref = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        func newsFeed(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
-            print("yellow")
-            cell.fullNameLabel.text = "it works!"
-
-            return cell
-        }
+        
+        self.tableView.rowHeight = 250
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        ref.child("User").child("Number of Posts").observe(.value, with: { snapshot in
+            let postNumber = snapshot.value
+        })
+        return 1//postNumber
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
         
         ref.child("User").child("Number of Posts").observe(.value, with: { snapshot in
-            let postNum = snapshot.value
-            if (postNum as? Int ?? 0) != 0 {
+            let postNumber = snapshot.value
+            if (postNumber as? Int) != 0 {
                 
                 let yourImage: UIImage = UIImage(named: "test")!
-                self.profileImage.image = yourImage
-                self.profileImage.makeRounded()
+                cell.profileImage.image = yourImage
+                cell.profileImage.makeRounded()
                 
                 self.ref.child("User").child("Post 1").child("Name").observe(.value, with: { snapshot in
                     let name = snapshot.value
-                    self.fullNameLabel.text = String(describing: name!)
-                    if self.fullNameLabel.text == "<null>" {
-                        self.fullNameLabel.text = ""
-                    }
+                    cell.fullNameLabel.text = String(describing: name!)
                 })
 
                 self.ref.child("User").child("Post 1").child("Caption").observe(.value, with: { snapshot in
                     let caption = snapshot.value
-                    self.captionLabel.text = String(describing: caption!)
-                    if self.captionLabel.text == "<null>" {
+                    cell.captionLabel.text = String(describing: caption!)
+                    /*if self.captionLabel.text == "<null>" {
                         self.captionLabel.text = ""
-                    }
+                    }*/
                 })
             }
             else {
-                /*self.fullNameLabel.text = ""
-                self.captionLabel.text = ""*/
+                cell.fullNameLabel.text = ""
+                cell.captionLabel.text = ""
             }
         })
+        return cell
     }
 }

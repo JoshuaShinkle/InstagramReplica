@@ -11,4 +11,6 @@ import UIKit
 class PostCell: UITableViewCell {
     
     @IBOutlet var fullNameLabel: UILabel!
+    @IBOutlet var captionLabel: UILabel!
+    @IBOutlet var profileImage: UIImageView!
 }
