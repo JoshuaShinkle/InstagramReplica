@@ -18,6 +18,9 @@
 		BA243394248E749D00C1CB55 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA243393248E749D00C1CB55 /* SignUpViewController.swift */; };
 		BA243396248E813700C1CB55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA243395248E813700C1CB55 /* GoogleService-Info.plist */; };
 		BA243398248E89C600C1CB55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA243397248E89C600C1CB55 /* User.swift */; };
+		BA35D9AB24990383000BB815 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA35D9AA24990383000BB815 /* PostCell.swift */; };
+		BA9871D92493CE0300B124F6 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9871D82493CE0300B124F6 /* LocationViewController.swift */; };
+		BAA4491C2493AA8F004AB6B5 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4491B2493AA8F004AB6B5 /* CreatePostViewController.swift */; };
 		BAAAE15B248FFEFA00ED2D68 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */; };
 		BAAAE15D24901F6B00ED2D68 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE15C24901F6B00ED2D68 /* FeedViewController.swift */; };
 		BAAAE1602490227700ED2D68 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE15F2490227700ED2D68 /* DiscoverViewController.swift */; };
@@ -42,6 +45,9 @@
 		BA243393248E749D00C1CB55 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BA243395248E813700C1CB55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA243397248E89C600C1CB55 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA35D9AA24990383000BB815 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		BA9871D82493CE0300B124F6 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		BAA4491B2493AA8F004AB6B5 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BAAAE15C24901F6B00ED2D68 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		BAAAE15F2490227700ED2D68 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				BA243397248E89C600C1CB55 /* User.swift */,
+				BA35D9AA24990383000BB815 /* PostCell.swift */,
 				BA243390248E6E1F00C1CB55 /* Controllers */,
 				BA24337C248E623F00C1CB55 /* AppDelegate.swift */,
 				BA24337E248E623F00C1CB55 /* SceneDelegate.swift */,
@@ -117,10 +124,12 @@
 			isa = PBXGroup;
 			children = (
 				BA243380248E623F00C1CB55 /* WelcomeViewController.swift */,
-				BAAAE15E2490225700ED2D68 /* Tab Bar Controllers */,
 				BA243391248E6E7500C1CB55 /* SignInViewController.swift */,
 				BA243393248E749D00C1CB55 /* SignUpViewController.swift */,
 				BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */,
+				BAA4491B2493AA8F004AB6B5 /* CreatePostViewController.swift */,
+				BA9871D82493CE0300B124F6 /* LocationViewController.swift */,
+				BAAAE15E2490225700ED2D68 /* Tab Bar Controllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -235,12 +244,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA35D9AB24990383000BB815 /* PostCell.swift in Sources */,
 				BAAAE1602490227700ED2D68 /* DiscoverViewController.swift in Sources */,
+				BAA4491C2493AA8F004AB6B5 /* CreatePostViewController.swift in Sources */,
 				BA243392248E6E7500C1CB55 /* SignInViewController.swift in Sources */,
 				BA243381248E623F00C1CB55 /* WelcomeViewController.swift in Sources */,
 				BA243398248E89C600C1CB55 /* User.swift in Sources */,
 				BA24337D248E623F00C1CB55 /* AppDelegate.swift in Sources */,
 				BA24337F248E623F00C1CB55 /* SceneDelegate.swift in Sources */,
+				BA9871D92493CE0300B124F6 /* LocationViewController.swift in Sources */,
 				BAAAE1662490229800ED2D68 /* ProfileViewController.swift in Sources */,
 				BAAAE1642490228C00ED2D68 /* FriendsViewController.swift in Sources */,
 				BA243394248E749D00C1CB55 /* SignUpViewController.swift in Sources */,
