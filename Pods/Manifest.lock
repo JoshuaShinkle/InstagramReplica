@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (4.9.1)
+  - Faye (2.0.0):
+    - Starscream (~> 3.1)
   - Firebase/Auth (6.24.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.5.3)
@@ -54,6 +57,20 @@ PODS:
     - FirebaseAuthInterop (~> 1.1)
     - FirebaseCore (~> 6.6)
     - GTMSessionFetcher/Core (~> 1.1)
+  - GetStream (2.2.2):
+    - GetStream/Core (= 2.2.2)
+    - GetStream/Faye (= 2.2.2)
+  - GetStream/Core (2.2.2):
+    - Moya (~> 13.0)
+    - Swime (~> 3.0)
+  - GetStream/Faye (2.2.2):
+    - Faye
+    - GetStream/Core
+  - GetStreamActivityFeed (2.2.2):
+    - GetStream (~> 2.2)
+    - Nuke (~> 8.1)
+    - Reusable (~> 4.1)
+    - SnapKit (~> 5.0)
   - GoogleAppMeasurement (6.5.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -85,21 +102,39 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.4.0)
   - leveldb-library (1.22)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
+  - Nuke (8.4.1)
   - PromisesObjC (1.2.8)
+  - Result (4.1.0)
+  - Reusable (4.1.1):
+    - Reusable/Storyboard (= 4.1.1)
+    - Reusable/View (= 4.1.1)
+  - Reusable/Storyboard (4.1.1)
+  - Reusable/View (4.1.1)
+  - SnapKit (5.0.1)
+  - Starscream (3.1.1)
+  - Swime (3.0.6)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - GetStreamActivityFeed
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - Faye
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -110,16 +145,27 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstallations
     - FirebaseStorage
+    - GetStream
+    - GetStreamActivityFeed
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
+    - Moya
     - nanopb
+    - Nuke
     - PromisesObjC
+    - Result
+    - Reusable
+    - SnapKit
+    - Starscream
+    - Swime
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Faye: be7f08638a7c27da87714716ab5bfc970d4eda6d
   Firebase: b28e55c60efd98963cd9011fe2fac5a10c2ba124
   FirebaseAnalytics: 7386fc2176e3f93ad8ef34b5b1f2b33a891e4962
   FirebaseAuth: 7047aec89c0b17ecd924a550c853f0c27ac6015e
@@ -130,15 +176,24 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 4e99c0c475d1ee0aa64ae2b53c93f80b7b60d7d9
   FirebaseInstallations: 2119fb3e46b0a88bfdbf12562f855ee3252462fa
   FirebaseStorage: f4f39ae834a7145963b913f54e2f24a9db1d8fac
+  GetStream: 92654c26e0d954b22d1de0ef36606197d4f2cb97
+  GetStreamActivityFeed: 0066b7ff8be3fa3df10f86b048bc6fbf22945e97
   GoogleAppMeasurement: 4c644d86835d827bab30ab6aabb9ecaf1f500735
   GoogleDataTransport: f6f8eba931df03ebd2232ff4645aa85f8f47b5ab
   GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  Swime: d7b2c277503b6cea317774aedc2dce05613f8b0b
 
-PODFILE CHECKSUM: a9c78076d0699099851359232f6cfadadfd3bfa1
+PODFILE CHECKSUM: f3563fa7bc68ac7c5c8588d59de196d07d252e82
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

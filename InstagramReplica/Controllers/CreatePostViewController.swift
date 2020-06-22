@@ -51,7 +51,6 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        ref.child("User").child("Post \(postNum)").child("Caption").setValue(captionText.text)
         if captionText.text.isEmpty {
             captionText.text = "Placeholder"
             captionText.textColor = UIColor.lightGray

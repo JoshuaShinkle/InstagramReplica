@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2W9-Wc-gP5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2W9-Wc-gP5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -573,14 +573,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Bbl-de-3a3" style="IBUITableViewCellStyleDefault" id="YS5-iC-afH">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YS5-iC-afH" id="UkI-BX-0D6">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bbl-de-3a3">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -692,18 +692,10 @@
                     <view key="view" contentMode="scaleToFill" id="vfV-tg-e36">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6GT-hr-GWx">
-                                <rect key="frame" x="20" y="98" width="374" height="715"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="dpH-TU-H9r"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="HXU-lb-bqh"/>
-                    <navigationItem key="navigationItem" id="wSw-wP-4XY"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMf-Xo-Mzb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -711,20 +703,20 @@
             <point key="canvasLocation" x="2701" y="-2053"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="bell.fill" catalog="system" width="64" height="62"/>
-        <image name="camera" catalog="system" width="64" height="48"/>
-        <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="house.fill" catalog="system" width="64" height="52"/>
-        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
-        <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
-        <image name="message" catalog="system" width="64" height="56"/>
-        <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
-        <image name="person" catalog="system" width="64" height="58"/>
-        <image name="person.2" catalog="system" width="64" height="40"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lIf-IC-u57"/>
         <segue reference="gHQ-yp-cry"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="bell.fill" catalog="system" width="128" height="124"/>
+        <image name="camera" catalog="system" width="128" height="96"/>
+        <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="message" catalog="system" width="128" height="113"/>
+        <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.2" catalog="system" width="128" height="81"/>
+    </resources>
 </document>
