@@ -10,7 +10,8 @@ import UIKit
 
 class PostCell: UITableViewCell {
     
-    @IBOutlet var fullNameLabel: UILabel!
-    @IBOutlet var captionLabel: UILabel!
-    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var ellipsisButton: UIButton!
 }

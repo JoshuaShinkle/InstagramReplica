@@ -11,38 +11,25 @@ import Firebase
 
 class SignUpViewController: UIViewController {
 
-    let signInToApp = "signInToApp"
+    var user: User!
       
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var fullNameField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!
     
-    let ref = Database.database().reference()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.performSegue(withIdentifier: self.signInToApp, sender: nil)
-                self.emailField.text = nil
-                self.passwordField.text = nil
-                self.fullNameField.text = nil
-                self.phoneNumberField.text = nil
+                self.performSegue(withIdentifier: "signInToApp", sender: nil)
             }
         }
     }
     
     @IBAction func signUpDidTouch(_ sender: AnyObject) {
-        guard
-            let email = emailField.text,
-            let password = passwordField.text,
-            email.count > 0,
-            password.count > 0
-            else {
-                return
-        }
+        guard let email = emailField.text else {return}
+        guard let password = passwordField.text else {return}
         
         Auth.auth().createUser(withEmail: email, password: password) { user, error in
             if error == nil {
@@ -50,6 +37,12 @@ class SignUpViewController: UIViewController {
                                    password: self.passwordField.text!)
             }
         }
-        ref.child("User").child("Name").setValue(fullNameField.text)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "signInToApp",
+            let destination = segue.destination as? TabBarController {
+            destination.fullName = fullNameField.text!
+        }
     }
 }

@@ -11,16 +11,21 @@ import Firebase
 
 class CreatePostViewController: UIViewController, UITextViewDelegate {
         
-    @IBOutlet var fullNameLabel: UILabel!
-    @IBOutlet var captionText: UITextView!
-    @IBOutlet var profileImage: UIImageView!
-    
-    var postNum = 0
-    
-    let ref = Database.database().reference()
-    
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var captionText: UITextView!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var postImage: UIImageView!
+
+    var user: User!
+    var imagePicker: UIImagePickerController!
+            
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
         
         captionText.delegate = self
         captionText.textColor = UIColor.lightGray
@@ -29,18 +34,15 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
         profileImage.image = yourImage
         profileImage.makeRounded()
         
-        ref.child("User").child("Name").observe(.value, with: { snapshot in
-            let name = snapshot.value
-            self.fullNameLabel.text = String(describing: name!)
-            if self.fullNameLabel.text == "<null>" {
-                self.fullNameLabel.text = ""
-            }
-        })
-        
-        ref.child("User").child("Number of Posts").observe(.value, with: { snapshot in
-            let num = snapshot.value
-            self.postNum = (num as? Int ?? 0) + 1
-        })
+        Auth.auth().addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+            let usersRef = Database.database().reference(withPath: "Users")
+            usersRef.child("\(user.uid)").child("Name").observe(.value, with: { snapshot in
+                let name = snapshot.value
+                self.fullNameLabel.text = String(describing: name!)
+            })
+        }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -58,14 +60,23 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func post (_ sender: AnyObject) {
-        ref.child("User").child("Number of Posts").setValue(postNum)
         
-        ref.child("User").child("Post \(postNum)").child("Name").setValue(fullNameLabel.text)
-        ref.child("User").child("Post \(postNum)").child("Caption").setValue(captionText.text)
+        let postRef = Database.database().reference().child("Posts").child("\(Date())")
+        
+        let postObject = [
+            "caption" : captionText.text ?? "",
+            "timestamp" : [".sv" : "timestamp"]
+        ] as [String:Any]
+        
+        postRef.setValue(postObject)
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let TabBarViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarController
                 self.present(TabBarViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func insertImage (_ sender: AnyObject) {
+        self.present(imagePicker, animated: true, completion: nil)
     }
 }
 
@@ -75,5 +86,26 @@ extension UIImageView {
         self.layer.masksToBounds = true
         self.layer.cornerRadius = self.frame.height / 2
         self.clipsToBounds = true
+    }
+}
+
+extension Date {
+    func currentTimeMillis() -> Int64 {
+        return Int64(self.timeIntervalSince1970 * 1000)
+    }
+}
+
+extension CreatePostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.postImage.image = pickedImage
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
 }

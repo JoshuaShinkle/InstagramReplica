@@ -10,9 +10,7 @@ import UIKit
 import Firebase
 
 class SignInViewController: UIViewController {
-    
-    let signInToApp = "signInToApp"
-      
+          
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
       
@@ -21,22 +19,14 @@ class SignInViewController: UIViewController {
         
         Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.performSegue(withIdentifier: self.signInToApp, sender: nil)
-                self.emailField.text = nil
-                self.passwordField.text = nil
+                self.performSegue(withIdentifier: "signInToApp", sender: nil)
             }
         }
     }
         
     @IBAction func loginDidTouch(_ sender: AnyObject) {
-        guard
-            let email = emailField.text,
-            let password = passwordField.text,
-            email.count > 0,
-            password.count > 0
-            else {
-                return
-            }
+        guard let email = emailField.text else {return}
+        guard let password = passwordField.text else {return}
         
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
             if let error = error, user == nil {

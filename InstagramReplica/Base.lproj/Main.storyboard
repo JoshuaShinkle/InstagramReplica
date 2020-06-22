@@ -448,7 +448,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="ax3-kd-krU" customClass="CreatePostViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4lK-sp-lxH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdR-Zn-MVe">
@@ -484,11 +484,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kr5-Vp-Ds4">
-                                <rect key="frame" x="0.0" y="506" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="423" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem width="278" style="plain" systemItem="fixedSpace" id="hhb-RF-wYT"/>
-                                    <barButtonItem title="Camera" image="camera.fill" catalog="system" id="rZE-uy-nv8"/>
+                                    <barButtonItem title="Camera" image="camera.fill" catalog="system" id="rZE-uy-nv8">
+                                        <connections>
+                                            <action selector="insertImage:" destination="ax3-kd-krU" id="blx-CE-7DQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="22" style="plain" systemItem="fixedSpace" id="oyY-ar-vw0"/>
                                     <barButtonItem title="Location" image="mappin.and.ellipse" catalog="system" id="1BU-Z0-P3y">
                                         <connections>
@@ -497,19 +501,12 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a photo to your post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPw-Rh-BrI">
-                                <rect key="frame" x="20" y="506" width="206" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H5R-OZ-5Kk">
                                 <rect key="frame" x="6" y="95" width="72" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter caption:" translatesAutoresizingMaskIntoConstraints="NO" id="fig-JB-Qdz">
-                                <rect key="frame" x="6" y="171" width="374" height="261"/>
+                                <rect key="frame" x="6" y="171" width="408" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -524,6 +521,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipf-3e-Bkr">
+                                <rect key="frame" x="145" y="295" width="125" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="WFl-7r-Zeq"/>
@@ -533,6 +534,7 @@
                     <connections>
                         <outlet property="captionText" destination="fig-JB-Qdz" id="LyE-tZ-xlp"/>
                         <outlet property="fullNameLabel" destination="0cu-Xm-025" id="jbn-OB-Jgf"/>
+                        <outlet property="postImage" destination="Ipf-3e-Bkr" id="eNq-fK-nCm"/>
                         <outlet property="profileImage" destination="H5R-OZ-5Kk" id="CHL-y4-Hg8"/>
                     </connections>
                 </viewController>
@@ -614,7 +616,7 @@
             <objects>
                 <tableViewController id="9Mv-Wp-wBK" customClass="FeedViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ac8-kX-7qI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" translucent="NO" id="ndQ-97-jRp">
@@ -640,7 +642,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHd-I3-Npm">
-                                            <rect key="frame" x="0.0" y="11" width="374" height="202"/>
+                                            <rect key="frame" x="0.0" y="11" width="414" height="202"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUI-3m-Jux">
@@ -661,6 +663,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIc-bU-KDg">
+                                                    <rect key="frame" x="354" y="-10" width="52" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <state key="normal" title="..."/>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         </view>
@@ -668,6 +676,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="captionLabel" destination="ZDz-62-u6H" id="Fvy-Nm-SEH"/>
+                                    <outlet property="ellipsisButton" destination="WIc-bU-KDg" id="XA7-NX-7Z2"/>
                                     <outlet property="fullNameLabel" destination="KUI-3m-Jux" id="WSw-X1-2Y9"/>
                                     <outlet property="profileImage" destination="3Ut-um-22m" id="Hle-uh-lqH"/>
                                 </connections>
@@ -679,28 +688,12 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="FIt-3u-nOE"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3h5-Ed-gaV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2698.5507246376815" y="-1283.0357142857142"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="yFY-Gg-1kI">
-            <objects>
-                <viewController id="Ol4-bT-Buv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vfV-tg-e36">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="dpH-TU-H9r"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="HXU-lb-bqh"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rMf-Xo-Mzb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2701" y="-2053"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

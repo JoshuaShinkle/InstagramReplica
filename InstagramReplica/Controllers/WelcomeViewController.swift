@@ -11,15 +11,11 @@ import Firebase
 
 class WelcomeViewController: UIViewController {
     
-    let signInToApp = "signInToApp"
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Auth.auth().addStateDidChangeListener() { auth, user in
-            if user != nil {
-                self.performSegue(withIdentifier: self.signInToApp, sender: nil)
-            }
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "signInToApp", sender: nil)
         }
     }
 }
