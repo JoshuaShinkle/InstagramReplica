@@ -10,7 +10,8 @@ import UIKit
 
 class PostCell: UITableViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
+
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -29,7 +30,7 @@ class PostCell: UITableViewCell {
     }
     
     func set(post: Post) {
-        nameLabel.text = post.author
+        usernameLabel.text = post.author.username
         captionLabel.text = post.caption
         locationLabel.text = post.location
     }

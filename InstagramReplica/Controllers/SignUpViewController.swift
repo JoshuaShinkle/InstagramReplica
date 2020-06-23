@@ -15,7 +15,7 @@ class SignUpViewController: UIViewController {
       
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!
     
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ class SignUpViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "signInToApp",
             let destination = segue.destination as? TabBarController {
-            destination.name = nameField.text!
+            destination.username = usernameField.text!
         }
     }
 }

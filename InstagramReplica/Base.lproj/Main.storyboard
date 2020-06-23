@@ -351,7 +351,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hu1-m5-xnP" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hu1-m5-xnP" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
                                 <rect key="frame" x="54" y="217" width="307" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -417,9 +417,9 @@
                     <navigationItem key="navigationItem" id="shj-Kr-1a9"/>
                     <connections>
                         <outlet property="emailField" destination="Rn1-qJ-TfU" id="fZA-oX-SmY"/>
-                        <outlet property="nameField" destination="hu1-m5-xnP" id="zT9-Fg-UOO"/>
                         <outlet property="passwordField" destination="skU-RP-UdO" id="5o1-fa-9Js"/>
                         <outlet property="phoneNumberField" destination="i1n-2h-pCN" id="fnt-M3-SLn"/>
+                        <outlet property="usernameField" destination="hu1-m5-xnP" id="dan-FH-U1y"/>
                         <segue destination="gw1-2H-hls" kind="presentation" identifier="signInToApp" id="3XS-ZM-ing"/>
                     </connections>
                 </viewController>
@@ -469,7 +469,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cu-Xm-025">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cu-Xm-025">
                                 <rect key="frame" x="86" y="107" width="308" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -533,9 +533,9 @@
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="captionText" destination="fig-JB-Qdz" id="LyE-tZ-xlp"/>
-                        <outlet property="nameLabel" destination="0cu-Xm-025" id="SbM-6X-3vR"/>
                         <outlet property="postImage" destination="Ipf-3e-Bkr" id="eNq-fK-nCm"/>
                         <outlet property="profileImage" destination="H5R-OZ-5Kk" id="CHL-y4-Hg8"/>
+                        <outlet property="usernameLabel" destination="0cu-Xm-025" id="z9W-NK-fyF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oL-Nh-XxF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

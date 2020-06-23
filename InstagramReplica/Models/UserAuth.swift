@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  UserAuth.swift
 //  InstagramReplica
 //
 //  Created by Joshua Shinkle on 6/8/20.

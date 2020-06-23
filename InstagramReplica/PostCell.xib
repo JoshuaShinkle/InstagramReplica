@@ -21,7 +21,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="evb-D2-Ie5">
                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="evb-D2-Ie5" secondAttribute="height" multiplier="1:1" id="JAQ-MJ-Dhw"/>
                                     <constraint firstAttribute="width" constant="40" id="zVW-1M-5Pj"/>
@@ -72,8 +72,8 @@
             <connections>
                 <outlet property="captionLabel" destination="WNG-ql-As2" id="y6K-Vd-eK2"/>
                 <outlet property="locationLabel" destination="mDd-vY-3Lx" id="fqE-YT-fyd"/>
-                <outlet property="nameLabel" destination="3lD-mQ-Uw0" id="1u2-W7-zlS"/>
                 <outlet property="profileImage" destination="evb-D2-Ie5" id="mbc-aU-wbG"/>
+                <outlet property="usernameLabel" destination="3lD-mQ-Uw0" id="poT-96-Snh"/>
             </connections>
             <point key="canvasLocation" x="-155.79710144927537" y="151.67410714285714"/>
         </tableViewCell>

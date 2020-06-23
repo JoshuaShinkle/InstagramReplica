@@ -11,7 +11,7 @@ import Firebase
 
 class CreatePostViewController: UIViewController, UITextViewDelegate {
         
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var captionText: UITextView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var postImage: UIImageView!
@@ -32,15 +32,16 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
         
         let yourImage: UIImage = UIImage(named: "test")!
         profileImage.image = yourImage
-        profileImage.makeRounded()
+        profileImage.layer.cornerRadius = profileImage.bounds.height / 2
+        profileImage.clipsToBounds = true
         
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
             self.user = User(authData: user)
-            let usersRef = Database.database().reference(withPath: "Users")
-            usersRef.child("\(user.uid)").child("Name").observe(.value, with: { snapshot in
+            let usersRef = Database.database().reference(withPath: "users")
+            usersRef.child("\(user.uid)").child("username").observe(.value, with: { snapshot in
                 let name = snapshot.value
-                self.nameLabel.text = String(describing: name!)
+                self.usernameLabel.text = String(describing: name!)
             })
         }
     }
@@ -61,9 +62,15 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func post (_ sender: AnyObject) {
         
-        let postRef = Database.database().reference().child("Posts").child("\(Date())")
+        guard let userProfile = UserService.currentUserProfile else {return}
+        
+        let postRef = Database.database().reference().child("posts").child("\(Date())")
         
         let postObject = [
+            "author" : [
+                "uid" : userProfile.uid,
+                "username" : userProfile.username
+            ],
             "caption" : captionText.text ?? "",
             "timestamp" : [".sv" : "timestamp"]
         ] as [String:Any]
@@ -77,15 +84,6 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func insertImage (_ sender: AnyObject) {
         self.present(imagePicker, animated: true, completion: nil)
-    }
-}
-
-extension UIImageView {
-
-    func makeRounded() {
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = self.frame.height / 2
-        self.clipsToBounds = true
     }
 }
 

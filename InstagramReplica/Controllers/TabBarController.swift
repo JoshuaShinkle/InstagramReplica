@@ -12,9 +12,9 @@ import Firebase
 class TabBarController: UITabBarController {
         
     var user: User!
-    var name = "Placeholder"
-    let onlineRef = Database.database().reference(withPath: "Online")
-    let usersRef = Database.database().reference(withPath: "Users")
+    var username = "Placeholder"
+    let onlineRef = Database.database().reference(withPath: "online")
+    let usersRef = Database.database().reference(withPath: "users")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,8 @@ class TabBarController: UITabBarController {
             guard let user = user else { return }
             self.user = User(authData: user)
             let currentUserRef = self.onlineRef.child(self.user.uid)
-            if self.name != "Placeholder" {
-                self.usersRef.child("\(self.user.uid)").child("Name").setValue(self.name)
+            if self.username != "Placeholder" {
+                self.usersRef.child("\(self.user.uid)").child("username").setValue(self.username)
             }
             currentUserRef.setValue(self.user.email)
             currentUserRef.onDisconnectRemoveValue()
