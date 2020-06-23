@@ -174,7 +174,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="WQ4-gW-TKm" kind="relationship" relationship="viewControllers" id="F5h-VI-H4a"/>
+                        <segue destination="bnL-xY-DH8" kind="relationship" relationship="viewControllers" id="F5h-VI-H4a"/>
                         <segue destination="Ps0-Iz-sB6" kind="relationship" relationship="viewControllers" id="8ai-Qv-Mrv"/>
                         <segue destination="ghZ-67-jCd" kind="relationship" relationship="viewControllers" id="tlB-TX-ELK"/>
                         <segue destination="NnE-ba-TzQ" kind="relationship" relationship="viewControllers" id="k3Z-Az-BmJ"/>
@@ -540,7 +540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oL-Nh-XxF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3757.971014492754" y="-1283.0357142857142"/>
+            <point key="canvasLocation" x="4668.115942028986" y="-1283.0357142857142"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="WQs-x0-bZ6">
@@ -609,9 +609,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nK-Ol-aPU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4757.971014492754" y="-1283.0357142857142"/>
+            <point key="canvasLocation" x="5668.115942028986" y="-1283.0357142857142"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Feed-->
         <scene sceneID="o0X-kd-3FG">
             <objects>
                 <viewController id="WQ4-gW-TKm" customClass="FeedViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
@@ -619,17 +619,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" id="ndQ-97-jRp">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpH-Gq-NJn">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Feed" id="5ua-Gt-Bu1">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="camera" catalog="system" id="z8A-3Z-kO5"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil.and.ellipsis.rectangle" catalog="system" id="89q-2d-ZPH">
-                                            <connections>
-                                                <segue destination="ax3-kd-krU" kind="show" id="lIf-IC-u57"/>
-                                            </connections>
-                                        </barButtonItem>
+                                    <navigationItem title="Feed" id="WbT-c2-T0X">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="camera" catalog="system" id="JhN-dm-7Oi"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" id="44s-nl-K15"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -637,16 +633,42 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="D49-bW-zow"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="B8D-9t-Ndo"/>
+                    <navigationItem key="navigationItem" title="Feed" id="Voq-HP-lTI">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="camera" catalog="system" id="Vrw-9h-4N0"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" id="zEj-FO-q9N">
+                            <connections>
+                                <segue destination="ax3-kd-krU" kind="presentation" id="UgQ-hL-0Vb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlQ-GQ-a5U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2819" y="-1283"/>
+            <point key="canvasLocation" x="3728.985507246377" y="-1283.0357142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4Vw-q5-eF1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bnL-xY-DH8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="B8D-9t-Ndo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pr1-he-QKS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WQ4-gW-TKm" kind="relationship" relationship="rootViewController" id="PbM-uV-Qpy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z8B-kj-FJp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2818.840579710145" y="-1283.0357142857142"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lIf-IC-u57"/>
+        <segue reference="UgQ-hL-0Vb"/>
         <segue reference="gHQ-yp-cry"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -660,5 +682,6 @@
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
     </resources>
 </document>

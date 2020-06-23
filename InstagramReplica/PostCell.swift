@@ -31,5 +31,6 @@ class PostCell: UITableViewCell {
     func set(post: Post) {
         nameLabel.text = post.author
         captionLabel.text = post.caption
+        locationLabel.text = post.location
     }
 }

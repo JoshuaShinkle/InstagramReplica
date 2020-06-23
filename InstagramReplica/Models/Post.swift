@@ -12,10 +12,12 @@ class Post {
     var id: String
     var author: String
     var caption: String
+    var location: String
     
-    init(id: String, author: String, caption: String) {
+    init(id: String, author: String, caption: String, location: String) {
         self.id = id
         self.author = author
         self.caption = caption
+        self.location = location
     }
 }
