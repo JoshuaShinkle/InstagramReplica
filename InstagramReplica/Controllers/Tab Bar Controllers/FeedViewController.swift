@@ -9,91 +9,54 @@
 import UIKit
 import Firebase
 
-var postNumber = 0
-var cellNumber = 0
-
-class FeedViewController: UITableViewController {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var tableView: UITableView!
+    
+    var posts = [
+        Post(id: "1", author: "Trump", caption: "Bigly!"),
+        Post(id: "2", author: "Aven", caption: "MEOW!"),
+        Post(id: "3", author: "Josh", caption: "Wow!")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.rowHeight = 250
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        let cellNib = UINib(nibName: "PostCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "postCell")
+        view.addSubview(tableView)
+        
+        var layoutGuide: UILayoutGuide!
+        
+        if #available(iOS 11.0, *) {
+            layoutGuide = view.safeAreaLayoutGuide
+        } else {
+            layoutGuide = view.layoutMarginsGuide
+        }
+        
+        tableView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: layoutGuide.topAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor).isActive = true
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+        tableView.reloadData()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postNumber
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let ref = Database.database().reference()
-        
-        if cellNumber == 0 {
-            cellNumber = postNumber
-        }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
-
-        let interaction = UIContextMenuInteraction(delegate: self)
-        cell.ellipsisButton.addInteraction(interaction)
-        
-        if postNumber != 0 {
-            let yourImage: UIImage = UIImage(named: "test")!
-            cell.profileImage.image = yourImage
-            cell.profileImage.makeRounded()
-                            
-            ref.child("User").child("Post \(cellNumber)").child("Name").observe(.value, with: { snapshot in
-                let name = snapshot.value
-                cell.fullNameLabel.text = String(describing: name!)
-            })
-
-            ref.child("User").child("Post \(cellNumber)").child("Caption").observe(.value, with: { snapshot in
-                let caption = snapshot.value
-                cell.captionLabel.text = String(describing: caption!)
-            })
-        }
-        else {
-            cell.fullNameLabel.text = ""
-            cell.captionLabel.text = ""
-        }
-        
-        if cellNumber > 0 {
-            cellNumber -= 1
-        }
-        
-        return cell
-    }
-}
-
-extension FeedViewController: UIContextMenuInteractionDelegate {
-    func contextMenuInteraction(
-        _ interaction: UIContextMenuInteraction,
-        configurationForMenuAtLocation location: CGPoint)
-        -> UIContextMenuConfiguration? {
-            return UIContextMenuConfiguration(
-                identifier: nil,
-                previewProvider: nil,
-                actionProvider: { _ in
-                    let deletePost = self.makeDeletePostAction()
-                    let children = [deletePost]
-                    return UIMenu(title: "", children: children)
-            })
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
     }
     
-    func makeDeletePostAction() -> UIAction {
-        let deletePostAttributes = UIMenuElement.Attributes.destructive
-        return UIAction(
-            title: "Delete Post",
-            identifier: nil,
-            attributes: deletePostAttributes) { _ in
-                let ref = Database.database().reference()
-                ref.child("User").child("Number of Posts").setValue(postNumber - 1)
-                ref.child("User").child("Post 2").removeValue()
-                print(cellNumber)
-        }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostCell
+        cell.set(post: posts[indexPath.row])
+        return cell
     }
 }

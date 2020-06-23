@@ -11,7 +11,7 @@ import Firebase
 
 class CreatePostViewController: UIViewController, UITextViewDelegate {
         
-    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var captionText: UITextView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var postImage: UIImageView!
@@ -40,7 +40,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
             let usersRef = Database.database().reference(withPath: "Users")
             usersRef.child("\(user.uid)").child("Name").observe(.value, with: { snapshot in
                 let name = snapshot.value
-                self.fullNameLabel.text = String(describing: name!)
+                self.nameLabel.text = String(describing: name!)
             })
         }
     }

@@ -174,7 +174,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9Mv-Wp-wBK" kind="relationship" relationship="viewControllers" id="bDY-n0-jOg"/>
+                        <segue destination="WQ4-gW-TKm" kind="relationship" relationship="viewControllers" id="F5h-VI-H4a"/>
                         <segue destination="Ps0-Iz-sB6" kind="relationship" relationship="viewControllers" id="8ai-Qv-Mrv"/>
                         <segue destination="ghZ-67-jCd" kind="relationship" relationship="viewControllers" id="tlB-TX-ELK"/>
                         <segue destination="NnE-ba-TzQ" kind="relationship" relationship="viewControllers" id="k3Z-Az-BmJ"/>
@@ -417,7 +417,7 @@
                     <navigationItem key="navigationItem" id="shj-Kr-1a9"/>
                     <connections>
                         <outlet property="emailField" destination="Rn1-qJ-TfU" id="fZA-oX-SmY"/>
-                        <outlet property="fullNameField" destination="hu1-m5-xnP" id="DSh-Sw-TpN"/>
+                        <outlet property="nameField" destination="hu1-m5-xnP" id="zT9-Fg-UOO"/>
                         <outlet property="passwordField" destination="skU-RP-UdO" id="5o1-fa-9Js"/>
                         <outlet property="phoneNumberField" destination="i1n-2h-pCN" id="fnt-M3-SLn"/>
                         <segue destination="gw1-2H-hls" kind="presentation" identifier="signInToApp" id="3XS-ZM-ing"/>
@@ -448,7 +448,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="ax3-kd-krU" customClass="CreatePostViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4lK-sp-lxH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdR-Zn-MVe">
@@ -484,7 +484,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kr5-Vp-Ds4">
-                                <rect key="frame" x="0.0" y="423" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="506" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem width="278" style="plain" systemItem="fixedSpace" id="hhb-RF-wYT"/>
@@ -533,7 +533,7 @@
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="captionText" destination="fig-JB-Qdz" id="LyE-tZ-xlp"/>
-                        <outlet property="fullNameLabel" destination="0cu-Xm-025" id="jbn-OB-Jgf"/>
+                        <outlet property="nameLabel" destination="0cu-Xm-025" id="SbM-6X-3vR"/>
                         <outlet property="postImage" destination="Ipf-3e-Bkr" id="eNq-fK-nCm"/>
                         <outlet property="profileImage" destination="H5R-OZ-5Kk" id="CHL-y4-Hg8"/>
                     </connections>
@@ -612,88 +612,37 @@
             <point key="canvasLocation" x="4757.971014492754" y="-1283.0357142857142"/>
         </scene>
         <!--Feed View Controller-->
-        <scene sceneID="IHs-Wt-eWD">
+        <scene sceneID="o0X-kd-3FG">
             <objects>
-                <tableViewController id="9Mv-Wp-wBK" customClass="FeedViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ac8-kX-7qI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                <viewController id="WQ4-gW-TKm" customClass="FeedViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7DB-0t-miZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" id="ndQ-97-jRp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Feed" id="5ua-Gt-Bu1">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="camera" catalog="system" id="z8A-3Z-kO5"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil.and.ellipsis.rectangle" catalog="system" id="89q-2d-ZPH">
+                                            <connections>
+                                                <segue destination="ax3-kd-krU" kind="show" id="lIf-IC-u57"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" translucent="NO" id="ndQ-97-jRp">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Feed" id="5ua-Gt-Bu1">
-                                    <barButtonItem key="leftBarButtonItem" title="Item" image="camera" catalog="system" id="z8A-3Z-kO5"/>
-                                    <barButtonItem key="rightBarButtonItem" title="Item" image="pencil.and.ellipsis.rectangle" catalog="system" id="89q-2d-ZPH">
-                                        <connections>
-                                            <segue destination="ax3-kd-krU" kind="show" id="lIf-IC-u57"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="250" id="B60-D0-jj8" customClass="PostCell" customModule="InstagramReplica" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="250"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B60-D0-jj8" id="RHq-P4-MEA">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHd-I3-Npm">
-                                            <rect key="frame" x="0.0" y="11" width="414" height="202"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUI-3m-Jux">
-                                                    <rect key="frame" x="88" y="8" width="278" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ut-um-22m">
-                                                    <rect key="frame" x="8" y="0.0" width="72" height="68"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CAPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDz-62-u6H">
-                                                    <rect key="frame" x="8" y="91" width="358" height="111"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIc-bU-KDg">
-                                                    <rect key="frame" x="354" y="-10" width="52" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <state key="normal" title="..."/>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        </view>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="captionLabel" destination="ZDz-62-u6H" id="Fvy-Nm-SEH"/>
-                                    <outlet property="ellipsisButton" destination="WIc-bU-KDg" id="XA7-NX-7Z2"/>
-                                    <outlet property="fullNameLabel" destination="KUI-3m-Jux" id="WSw-X1-2Y9"/>
-                                    <outlet property="profileImage" destination="3Ut-um-22m" id="Hle-uh-lqH"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="9Mv-Wp-wBK" id="QTt-2o-qIv"/>
-                            <outlet property="delegate" destination="9Mv-Wp-wBK" id="zqW-SN-DSq"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="FIt-3u-nOE"/>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3h5-Ed-gaV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <viewLayoutGuide key="safeArea" id="D49-bW-zow"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="B8D-9t-Ndo"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AlQ-GQ-a5U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698.5507246376815" y="-1283.0357142857142"/>
+            <point key="canvasLocation" x="2819" y="-1283"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
