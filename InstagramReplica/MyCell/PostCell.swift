@@ -10,7 +10,6 @@ import UIKit
 
 class PostCell: UITableViewCell {
 
-
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
@@ -30,6 +29,10 @@ class PostCell: UITableViewCell {
     }
     
     func set(post: Post) {
+        ImageService.getImage(withURL: post.author.photoURL) { image in
+            self.profileImage.image = image
+        }
+        
         usernameLabel.text = post.author.username
         captionLabel.text = post.caption
         locationLabel.text = post.location

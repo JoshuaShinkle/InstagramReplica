@@ -57,10 +57,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let author = dict["author"] as? [String:Any],
                     let uid = author["uid"] as? String,
                     let username = author["username"] as? String,
+                    let photoURL = author["photoURL"] as? String,
+                    let url = URL(string: photoURL),
                     let caption = dict["caption"] as? String,
                     let timestamp = dict["timestamp"] as? Double {
                         
-                    let userProfile = UserProfile(uid: uid, username: username)
+                    let userProfile = UserProfile(uid: uid, username: username, photoURL: url)
                     let post = Post(id: childSnapshot.key, author: userProfile, caption: caption, location: "Los Angeles", timestamp: timestamp)
                     tempPosts.append(post)
                 }

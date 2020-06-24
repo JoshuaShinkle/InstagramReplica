@@ -10,7 +10,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,11 +120,11 @@
                                     <action selector="loginDidTouch:" destination="MSs-Tc-5xq" eventType="touchUpInside" id="9ur-pw-leA"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="miY-cp-1Un" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="miY-cp-1Un" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
                                 <rect key="frame" x="58" y="261" width="307" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -134,11 +134,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EfI-pq-IUM" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EfI-pq-IUM" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
                                 <rect key="frame" x="58" y="322" width="307" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -297,16 +297,47 @@
                                     <action selector="signOut:" destination="bhE-Zi-Nng" eventType="touchUpInside" id="sIU-eq-COf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZG-gE-Jzl">
+                                <rect key="frame" x="20" y="364" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="Change Profile Image"/>
+                                <connections>
+                                    <action selector="changeProfileImage:" destination="bhE-Zi-Nng" eventType="touchUpInside" id="eE0-y2-7H2"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ohv-Lg-8MF">
+                                <rect key="frame" x="148" y="107" width="119" height="119"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ohv-Lg-8MF" secondAttribute="height" multiplier="1:1" id="47g-Zm-r34"/>
+                                    <constraint firstAttribute="width" constant="119" id="Kd0-wO-GLC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnO-gW-dXi">
+                                <rect key="frame" x="20" y="267" width="374" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ohv-Lg-8MF" firstAttribute="top" secondItem="JhT-VJ-xFo" secondAttribute="top" constant="63" id="FcR-ZP-GSw"/>
+                            <constraint firstItem="ohv-Lg-8MF" firstAttribute="leading" secondItem="JhT-VJ-xFo" secondAttribute="leading" constant="148" id="h0h-C6-pNP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JhT-VJ-xFo"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="Y4p-3L-81r"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="profileImage" destination="ohv-Lg-8MF" id="JWG-2q-BjB"/>
+                        <outlet property="usernameLabel" destination="VnO-gW-dXi" id="fCO-te-Bvf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUf-Us-9rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2819" y="1540"/>
+            <point key="canvasLocation" x="2818.840579710145" y="1539.5089285714284"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="isC-ms-u7F">
@@ -338,10 +369,10 @@
                                     <action selector="signUpDidTouch:" destination="q3O-eq-YLp" eventType="touchUpInside" id="lZ4-kQ-3f0"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rn1-qJ-TfU" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rn1-qJ-TfU" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
                                 <rect key="frame" x="54" y="349" width="307" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -351,10 +382,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hu1-m5-xnP" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hu1-m5-xnP" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
                                 <rect key="frame" x="54" y="217" width="307" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -364,10 +395,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i1n-2h-pCN" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i1n-2h-pCN" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
                                 <rect key="frame" x="54" y="283" width="307" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -377,10 +408,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="skU-RP-UdO" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="skU-RP-UdO" customClass="DesignableTextField" customModule="InstagramReplica" customModuleProvider="target">
                                 <rect key="frame" x="54" y="415" width="307" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -430,7 +461,7 @@
         <!--Navigation Controller-->
         <scene sceneID="iyp-JQ-j6o">
             <objects>
-                <navigationController id="2W9-Wc-gP5" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" id="2W9-Wc-gP5" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8zW-xI-sn6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -488,11 +519,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem width="278" style="plain" systemItem="fixedSpace" id="hhb-RF-wYT"/>
-                                    <barButtonItem title="Camera" image="camera.fill" catalog="system" id="rZE-uy-nv8">
-                                        <connections>
-                                            <action selector="insertImage:" destination="ax3-kd-krU" id="blx-CE-7DQ"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Camera" image="camera.fill" catalog="system" id="rZE-uy-nv8"/>
                                     <barButtonItem width="22" style="plain" systemItem="fixedSpace" id="oyY-ar-vw0"/>
                                     <barButtonItem title="Location" image="mappin.and.ellipse" catalog="system" id="1BU-Z0-P3y">
                                         <connections>
@@ -504,9 +531,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H5R-OZ-5Kk">
                                 <rect key="frame" x="6" y="95" width="72" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter caption:" translatesAutoresizingMaskIntoConstraints="NO" id="fig-JB-Qdz">
-                                <rect key="frame" x="6" y="171" width="408" height="125"/>
+                                <rect key="frame" x="6" y="171" width="408" height="335"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -521,10 +549,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipf-3e-Bkr">
-                                <rect key="frame" x="145" y="295" width="125" height="125"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="WFl-7r-Zeq"/>
@@ -533,8 +557,7 @@
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="captionText" destination="fig-JB-Qdz" id="LyE-tZ-xlp"/>
-                        <outlet property="postImage" destination="Ipf-3e-Bkr" id="eNq-fK-nCm"/>
-                        <outlet property="profileImage" destination="H5R-OZ-5Kk" id="CHL-y4-Hg8"/>
+                        <outlet property="profileImage" destination="H5R-OZ-5Kk" id="oXO-Ta-Jbf"/>
                         <outlet property="usernameLabel" destination="0cu-Xm-025" id="z9W-NK-fyF"/>
                     </connections>
                 </viewController>
@@ -654,7 +677,7 @@
                     <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="B8D-9t-Ndo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pr1-he-QKS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -669,7 +692,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="UgQ-hL-0Vb"/>
-        <segue reference="gHQ-yp-cry"/>
+        <segue reference="0mJ-Ab-rBd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
