@@ -12,7 +12,7 @@ class Post {
     var id: String
     var author: UserProfile
     var caption: String
-    var timestamp: Double
+    var createdAt: Date
     var location: String
     
     init(id: String, author: UserProfile, caption: String, location: String, timestamp: Double) {
@@ -20,6 +20,6 @@ class Post {
         self.author = author
         self.caption = caption
         self.location = location
-        self.timestamp = timestamp
+        self.createdAt = Date(timeIntervalSince1970: timestamp / 1000)
     }
 }

@@ -72,7 +72,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
         
         guard let userProfile = UserService.currentUserProfile else {return}
 
-        let postRef = Database.database().reference().child("posts").child("\(Date())")
+        let postRef = Database.database().reference().child("posts").childByAutoId()
         
         let postObject = [
             "author" : [
@@ -89,11 +89,5 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let TabBarViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarController
         self.present(TabBarViewController, animated: true, completion: nil)
-    }
-}
-
-extension Date {
-    func currentTimeMillis() -> Int64 {
-        return Int64(self.timeIntervalSince1970 * 1000)
     }
 }

@@ -14,6 +14,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,5 +44,6 @@ class PostCell: UITableViewCell {
         usernameLabel.text = post.author.username
         captionLabel.text = post.caption
         locationLabel.text = post.location
+        timeLabel.text = post.createdAt.calenderTimeSinceNow()
     }
 }
