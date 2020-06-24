@@ -28,9 +28,16 @@ class PostCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    weak var post: Post?
+    
     func set(post: Post) {
-        ImageService.getImage(withURL: post.author.photoURL) { image in
-            self.profileImage.image = image
+        self.post = post
+        self.profileImage.image = nil
+        ImageService.getImage(withURL: post.author.photoURL) { image, url in
+            guard let _post = self.post else {return}
+            if _post.author.photoURL.absoluteString == url.absoluteString {
+                self.profileImage.image = image
+            }
         }
         
         usernameLabel.text = post.author.username

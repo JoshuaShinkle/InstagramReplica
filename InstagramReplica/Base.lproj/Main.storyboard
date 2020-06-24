@@ -298,16 +298,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZG-gE-Jzl">
-                                <rect key="frame" x="20" y="364" width="374" height="30"/>
+                                <rect key="frame" x="20" y="356" width="374" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <state key="normal" title="Change Profile Image"/>
+                                <state key="normal" title="Edit Profile Image"/>
                                 <connections>
                                     <action selector="changeProfileImage:" destination="bhE-Zi-Nng" eventType="touchUpInside" id="eE0-y2-7H2"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ohv-Lg-8MF">
                                 <rect key="frame" x="148" y="107" width="119" height="119"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ohv-Lg-8MF" secondAttribute="height" multiplier="1:1" id="47g-Zm-r34"/>
                                     <constraint firstAttribute="width" constant="119" id="Kd0-wO-GLC"/>
@@ -677,7 +678,7 @@
                     <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="B8D-9t-Ndo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pr1-he-QKS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -692,7 +693,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="UgQ-hL-0Vb"/>
-        <segue reference="0mJ-Ab-rBd"/>
+        <segue reference="gHQ-yp-cry"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bell.fill" catalog="system" width="128" height="124"/>

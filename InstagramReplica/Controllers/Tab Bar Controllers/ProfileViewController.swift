@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
             usersRef.child("\(user.uid)").child("photoURL").observe(.value, with: { snapshot in
                 let url = snapshot.value as? String
                 let photoURL = URL(string: url  ?? "http://www.example.com/image.jpg")!
-                ImageService.getImage(withURL: photoURL) { image in
+                ImageService.getImage(withURL: photoURL) { image, url in
                     self.profileImage.image = image
                 }
             })
@@ -69,10 +69,8 @@ class ProfileViewController: UIViewController {
         
         storageRef.putData(imageData, metadata: metaData) { metaData, error in
             if error == nil, metaData != nil {
-                if let url = metaData?.downloadURL() {
+                storageRef.downloadURL { url, error in
                     completion(url)
-                } else {
-                    completion(nil)
                 }
             } else {
                 completion(nil)

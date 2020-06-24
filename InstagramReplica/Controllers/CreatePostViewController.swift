@@ -30,8 +30,12 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
             usersRef.child("\(user.uid)").child("photoURL").observe(.value, with: { snapshot in
                 let url = snapshot.value as? String
                 let photoURL = URL(string: url  ?? "http://www.example.com/image.jpg")!
-                ImageService.getImage(withURL: photoURL) { image in
-                    self.profileImage.image = image
+                ImageService.getImage(withURL: photoURL) { image, url  in
+                    if photoURL == URL(string: "http://www.example.com/image.jpg")! {
+                        usersRef.child("\(user.uid)").child("photoURL").setValue("NONE")
+                    } else {
+                        self.profileImage.image = image
+                    }
                 }
             })
         }
