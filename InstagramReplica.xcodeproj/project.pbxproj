@@ -23,10 +23,11 @@
 		BA243398248E89C600C1CB55 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA243397248E89C600C1CB55 /* UserAuth.swift */; };
 		BA6CD72424A395DD00778CD3 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6CD72324A395DD00778CD3 /* ImageService.swift */; };
 		BA9871D92493CE0300B124F6 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9871D82493CE0300B124F6 /* LocationViewController.swift */; };
+		BA99525B24B4D77E0054355A /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99525A24B4D77E0054355A /* DiscoverViewController.swift */; };
+		BA99525D24B4EF6F0054355A /* DiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99525C24B4EF6F0054355A /* DiscoverCell.swift */; };
 		BAA4491C2493AA8F004AB6B5 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4491B2493AA8F004AB6B5 /* CreatePostViewController.swift */; };
 		BAAAE15B248FFEFA00ED2D68 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */; };
 		BAAAE15D24901F6B00ED2D68 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE15C24901F6B00ED2D68 /* FeedViewController.swift */; };
-		BAAAE1602490227700ED2D68 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE15F2490227700ED2D68 /* DiscoverViewController.swift */; };
 		BAAAE1622490228200ED2D68 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1612490228200ED2D68 /* ChatViewController.swift */; };
 		BAAAE1642490228C00ED2D68 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1632490228C00ED2D68 /* FriendsViewController.swift */; };
 		BAAAE1662490229800ED2D68 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1652490229800ED2D68 /* ProfileViewController.swift */; };
@@ -55,10 +56,11 @@
 		BA243397248E89C600C1CB55 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		BA6CD72324A395DD00778CD3 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		BA9871D82493CE0300B124F6 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		BA99525A24B4D77E0054355A /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		BA99525C24B4EF6F0054355A /* DiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
 		BAA4491B2493AA8F004AB6B5 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BAAAE15C24901F6B00ED2D68 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		BAAAE15F2490227700ED2D68 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		BAAAE1612490228200ED2D68 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		BAAAE1632490228C00ED2D68 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		BAAAE1652490229800ED2D68 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +133,7 @@
 				BAC0D69E24A4035C0042EEFF /* HelperExtension.swift */,
 				BA1B188824A2488100F4DF6F /* Models */,
 				BA243390248E6E1F00C1CB55 /* Controllers */,
-				BA6CD72224A395AB00778CD3 /* MyCell */,
+				BA6CD72224A395AB00778CD3 /* Cells */,
 				BA6CD72524A395E400778CD3 /* Services */,
 				BA24337C248E623F00C1CB55 /* AppDelegate.swift */,
 				BA24337E248E623F00C1CB55 /* SceneDelegate.swift */,
@@ -147,10 +149,7 @@
 		BA243390248E6E1F00C1CB55 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BA243380248E623F00C1CB55 /* WelcomeViewController.swift */,
-				BA243391248E6E7500C1CB55 /* SignInViewController.swift */,
-				BA243393248E749D00C1CB55 /* SignUpViewController.swift */,
-				BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */,
+				BA99525E24B4F68D0054355A /* Getting In */,
 				BAA4491B2493AA8F004AB6B5 /* CreatePostViewController.swift */,
 				BA9871D82493CE0300B124F6 /* LocationViewController.swift */,
 				BAAAE15E2490225700ED2D68 /* Tab Bar Controllers */,
@@ -158,13 +157,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		BA6CD72224A395AB00778CD3 /* MyCell */ = {
+		BA6CD72224A395AB00778CD3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				BA1B188224A2388900F4DF6F /* PostCell.swift */,
 				BA1B188324A2388900F4DF6F /* PostCell.xib */,
+				BA99525C24B4EF6F0054355A /* DiscoverCell.swift */,
 			);
-			path = MyCell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		BA6CD72524A395E400778CD3 /* Services */ = {
@@ -176,12 +176,23 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		BA99525E24B4F68D0054355A /* Getting In */ = {
+			isa = PBXGroup;
+			children = (
+				BA243380248E623F00C1CB55 /* WelcomeViewController.swift */,
+				BA243393248E749D00C1CB55 /* SignUpViewController.swift */,
+				BA243391248E6E7500C1CB55 /* SignInViewController.swift */,
+			);
+			path = "Getting In";
+			sourceTree = "<group>";
+		};
 		BAAAE15E2490225700ED2D68 /* Tab Bar Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */,
 				BAAAE15C24901F6B00ED2D68 /* FeedViewController.swift */,
-				BAAAE15F2490227700ED2D68 /* DiscoverViewController.swift */,
 				BAAAE1612490228200ED2D68 /* ChatViewController.swift */,
+				BA99525A24B4D77E0054355A /* DiscoverViewController.swift */,
 				BAAAE1632490228C00ED2D68 /* FriendsViewController.swift */,
 				BAAAE1652490229800ED2D68 /* ProfileViewController.swift */,
 			);
@@ -287,16 +298,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAAAE1602490227700ED2D68 /* DiscoverViewController.swift in Sources */,
 				BAA4491C2493AA8F004AB6B5 /* CreatePostViewController.swift in Sources */,
 				BA243392248E6E7500C1CB55 /* SignInViewController.swift in Sources */,
 				BA243381248E623F00C1CB55 /* WelcomeViewController.swift in Sources */,
 				BA243398248E89C600C1CB55 /* UserAuth.swift in Sources */,
+				BA99525D24B4EF6F0054355A /* DiscoverCell.swift in Sources */,
 				BA6CD72424A395DD00778CD3 /* ImageService.swift in Sources */,
 				BA24337D248E623F00C1CB55 /* AppDelegate.swift in Sources */,
 				BAD21F2F24A27EC5008BC725 /* UserService.swift in Sources */,
 				BA24337F248E623F00C1CB55 /* SceneDelegate.swift in Sources */,
 				BAD21F3124A281F6008BC725 /* UserProfile.swift in Sources */,
+				BA99525B24B4D77E0054355A /* DiscoverViewController.swift in Sources */,
 				BA9871D92493CE0300B124F6 /* LocationViewController.swift in Sources */,
 				BAAAE1662490229800ED2D68 /* ProfileViewController.swift in Sources */,
 				BAAAE1642490228C00ED2D68 /* FriendsViewController.swift in Sources */,
@@ -452,7 +464,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AK9464A7W3;
 				INFOPLIST_FILE = InstagramReplica/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,7 +484,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AK9464A7W3;
 				INFOPLIST_FILE = InstagramReplica/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

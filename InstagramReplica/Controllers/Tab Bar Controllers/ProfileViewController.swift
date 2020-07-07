@@ -12,6 +12,7 @@ import Firebase
 class ProfileViewController: UIViewController {
     
     var user: User!
+    var loadUserFromDiscover: UserProfile?
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -20,6 +21,10 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let loadUserFromDiscover = self.loadUserFromDiscover {
+            print(loadUserFromDiscover.username)
+        }
         
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
