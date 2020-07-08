@@ -18,12 +18,12 @@ class ProfileHeader: UICollectionViewCell {
         return iv
     }()
     
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Full Name"
-        label.font = UIFont.boldSystemFont(ofSize: 12)
-        return label
-    }()
+//    let nameLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "Full Name"
+//        label.font = UIFont.boldSystemFont(ofSize: 12)
+//        return label
+//    }()
     
     let postsLabel: UILabel = {
         let label = UILabel()
@@ -95,8 +95,8 @@ class ProfileHeader: UICollectionViewCell {
         profileImageView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 80, height: 80)
         profileImageView.layer.cornerRadius = 80/2
         
-        addSubview(nameLabel)
-        nameLabel.anchor(top: profileImageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 15, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+//        addSubview(nameLabel)
+//        nameLabel.anchor(top: profileImageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 15, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         configureUserStats()
         

@@ -137,6 +137,7 @@
 				BAC0D69E24A4035C0042EEFF /* HelperExtension.swift */,
 				BA1B188824A2488100F4DF6F /* Models */,
 				BA243390248E6E1F00C1CB55 /* Controllers */,
+				BA8C565624B6449900CE8121 /* View */,
 				BA6CD72224A395AB00778CD3 /* Cells */,
 				BA6CD72524A395E400778CD3 /* Services */,
 				BA24337C248E623F00C1CB55 /* AppDelegate.swift */,
@@ -167,7 +168,6 @@
 				BA1B188224A2388900F4DF6F /* PostCell.swift */,
 				BA1B188324A2388900F4DF6F /* PostCell.xib */,
 				BA99525C24B4EF6F0054355A /* DiscoverCell.swift */,
-				BA32D1E624B621B400868F83 /* ProfileHeader.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -179,6 +179,14 @@
 				BA6CD72324A395DD00778CD3 /* ImageService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		BA8C565624B6449900CE8121 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA32D1E624B621B400868F83 /* ProfileHeader.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BA99525E24B4F68D0054355A /* Getting In */ = {

@@ -60,9 +60,14 @@ class ProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
         
-        Database.database().reference().child("users").child(currentUid).child("username").observeSingleEvent(of: .value) { (snapshot) in
-            guard let username = snapshot.value as? String else { return }
-            self.navigationItem.title = username
+        Database.database().reference().child("users").child(currentUid).observeSingleEvent(of: .value) { (snapshot) in
+            if let dict = snapshot.value as? [String:Any],
+                let username = dict["username"] as? String,
+                let photoURL = dict["photoURL"] as? String,
+                let url = URL(string: photoURL) {
+                let user = UserProfile(uid: snapshot.key, username: username, photoURL: url)
+                self.navigationItem.title = user.username
+            }
         }
     }
 }
