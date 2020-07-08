@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 
 private let reuseIdentifier = "Cell"
+private let headerIdentifier = "ProfileHeader"
 
-class ProfileVC: UICollectionViewController {
+class ProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     // MARK: - Properties
     
@@ -20,6 +21,7 @@ class ProfileVC: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         
         fetchCurrentUserData()
     }
@@ -27,8 +29,7 @@ class ProfileVC: UICollectionViewController {
     // MARK: - UICollectionView
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
@@ -36,7 +37,17 @@ class ProfileVC: UICollectionViewController {
         // #warning Incomplete implementation, return the number of items
         return 0
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 200)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! ProfileHeader
+        
+        return header
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         
