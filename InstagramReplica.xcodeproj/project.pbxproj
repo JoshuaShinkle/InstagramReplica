@@ -21,6 +21,7 @@
 		BA243394248E749D00C1CB55 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA243393248E749D00C1CB55 /* SignUpViewController.swift */; };
 		BA243396248E813700C1CB55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA243395248E813700C1CB55 /* GoogleService-Info.plist */; };
 		BA243398248E89C600C1CB55 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA243397248E89C600C1CB55 /* UserAuth.swift */; };
+		BA32D1E524B6131500868F83 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA32D1E424B6131500868F83 /* ProfileVC.swift */; };
 		BA6CD72424A395DD00778CD3 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6CD72324A395DD00778CD3 /* ImageService.swift */; };
 		BA9871D92493CE0300B124F6 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9871D82493CE0300B124F6 /* LocationViewController.swift */; };
 		BA99525B24B4D77E0054355A /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99525A24B4D77E0054355A /* DiscoverViewController.swift */; };
@@ -54,6 +55,7 @@
 		BA243393248E749D00C1CB55 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BA243395248E813700C1CB55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA243397248E89C600C1CB55 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		BA32D1E424B6131500868F83 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		BA6CD72324A395DD00778CD3 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		BA9871D82493CE0300B124F6 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		BA99525A24B4D77E0054355A /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				BAAAE1612490228200ED2D68 /* ChatViewController.swift */,
 				BA99525A24B4D77E0054355A /* DiscoverViewController.swift */,
 				BAAAE1632490228C00ED2D68 /* FriendsViewController.swift */,
+				BA32D1E424B6131500868F83 /* ProfileVC.swift */,
 				BAAAE1652490229800ED2D68 /* ProfileViewController.swift */,
 			);
 			path = "Tab Bar Controllers";
@@ -318,6 +321,7 @@
 				BAAAE15D24901F6B00ED2D68 /* FeedViewController.swift in Sources */,
 				BAAAE1622490228200ED2D68 /* ChatViewController.swift in Sources */,
 				BAAAE15B248FFEFA00ED2D68 /* TabBarController.swift in Sources */,
+				BA32D1E524B6131500868F83 /* ProfileVC.swift in Sources */,
 				BA1B188424A2388900F4DF6F /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
