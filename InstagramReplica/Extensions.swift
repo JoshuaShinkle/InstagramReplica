@@ -1,5 +1,5 @@
 //
-//  HelperExtension.swift
+//  Extensions.swift
 //  InstagramReplica
 //
 //  Created by Joshua Shinkle on 6/24/20.
@@ -71,5 +71,37 @@ extension UIView {
         if height != 0 {
             heightAnchor.constraint(equalToConstant: height).isActive = true
         }
+    }
+}
+
+var imageCache = [String: UIImage]()
+
+extension UIImageView {
+    
+    func loadImage(with urlString: String) {
+        
+        if let cachedImage = imageCache[urlString] {
+            self.image = cachedImage
+            return
+        }
+        
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        
+            if let error = error {
+                print("Failed to load image with error", error.localizedDescription)
+            }
+            
+            guard let imageData = data else { return }
+            
+            let photoImage = UIImage(data: imageData)
+            
+            imageCache[url.absoluteString] = photoImage
+            
+            DispatchQueue.main.async {
+                self.image = photoImage
+            }
+        }.resume()
     }
 }

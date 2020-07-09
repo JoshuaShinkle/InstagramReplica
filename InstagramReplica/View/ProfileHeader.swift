@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileHeader: UICollectionViewCell {
+    
+    var user: UserProfile? {
+        didSet {
+            guard let profileImageUrl = user?.photoURL.absoluteString else {return}
+            profileImageView.loadImage(with: profileImageUrl)
+        }
+    }
+    
     
     let profileImageView: UIImageView = {
         let iv = UIImageView()

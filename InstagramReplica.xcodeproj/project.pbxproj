@@ -33,7 +33,7 @@
 		BAAAE1622490228200ED2D68 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1612490228200ED2D68 /* ChatViewController.swift */; };
 		BAAAE1642490228C00ED2D68 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1632490228C00ED2D68 /* FriendsViewController.swift */; };
 		BAAAE1662490229800ED2D68 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1652490229800ED2D68 /* ProfileViewController.swift */; };
-		BAC0D69F24A4035C0042EEFF /* HelperExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0D69E24A4035C0042EEFF /* HelperExtension.swift */; };
+		BAC0D69F24A4035C0042EEFF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0D69E24A4035C0042EEFF /* Extensions.swift */; };
 		BAD21F2F24A27EC5008BC725 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD21F2E24A27EC5008BC725 /* UserService.swift */; };
 		BAD21F3124A281F6008BC725 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD21F3024A281F6008BC725 /* UserProfile.swift */; };
 /* End PBXBuildFile section */
@@ -68,7 +68,7 @@
 		BAAAE1612490228200ED2D68 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		BAAAE1632490228C00ED2D68 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		BAAAE1652490229800ED2D68 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		BAC0D69E24A4035C0042EEFF /* HelperExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtension.swift; sourceTree = "<group>"; };
+		BAC0D69E24A4035C0042EEFF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BAD21F2E24A27EC5008BC725 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		BAD21F3024A281F6008BC725 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		EF6D7DACFCB0919FF3C4ABF6 /* libPods-InstagramReplica.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramReplica.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +134,7 @@
 		BA24337B248E623F00C1CB55 /* InstagramReplica */ = {
 			isa = PBXGroup;
 			children = (
-				BAC0D69E24A4035C0042EEFF /* HelperExtension.swift */,
+				BAC0D69E24A4035C0042EEFF /* Extensions.swift */,
 				BA1B188824A2488100F4DF6F /* Models */,
 				BA243390248E6E1F00C1CB55 /* Controllers */,
 				BA8C565624B6449900CE8121 /* View */,
@@ -327,7 +327,7 @@
 				BA9871D92493CE0300B124F6 /* LocationViewController.swift in Sources */,
 				BAAAE1662490229800ED2D68 /* ProfileViewController.swift in Sources */,
 				BAAAE1642490228C00ED2D68 /* FriendsViewController.swift in Sources */,
-				BAC0D69F24A4035C0042EEFF /* HelperExtension.swift in Sources */,
+				BAC0D69F24A4035C0042EEFF /* Extensions.swift in Sources */,
 				BA243394248E749D00C1CB55 /* SignUpViewController.swift in Sources */,
 				BA1B188724A2435400F4DF6F /* Post.swift in Sources */,
 				BAAAE15D24901F6B00ED2D68 /* FeedViewController.swift in Sources */,

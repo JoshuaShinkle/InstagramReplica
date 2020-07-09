@@ -15,6 +15,8 @@ private let headerIdentifier = "ProfileHeader"
 class ProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     // MARK: - Properties
+
+    var user: UserProfile?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,19 @@ class ProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! ProfileHeader
         
+        let currentUid = Auth.auth().currentUser?.uid
+        
+        Database.database().reference().child("users").child(currentUid!).observeSingleEvent(of: .value) { (snapshot) in
+            if let dict = snapshot.value as? [String:Any],
+                let username = dict["username"] as? String,
+                let photoURL = dict["photoURL"] as? String,
+                let url = URL(string: photoURL) {
+                let user = UserProfile(uid: snapshot.key, username: username, photoURL: url)
+                self.navigationItem.title = user.username
+                header.user = user
+            }
+        }
+        
         return header
     }
     
@@ -57,17 +72,7 @@ class ProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     // MARK: - API
     
     func fetchCurrentUserData() {
+                
         
-        guard let currentUid = Auth.auth().currentUser?.uid else { return }
-        
-        Database.database().reference().child("users").child(currentUid).observeSingleEvent(of: .value) { (snapshot) in
-            if let dict = snapshot.value as? [String:Any],
-                let username = dict["username"] as? String,
-                let photoURL = dict["photoURL"] as? String,
-                let url = URL(string: photoURL) {
-                let user = UserProfile(uid: snapshot.key, username: username, photoURL: url)
-                self.navigationItem.title = user.username
-            }
-        }
     }
 }
