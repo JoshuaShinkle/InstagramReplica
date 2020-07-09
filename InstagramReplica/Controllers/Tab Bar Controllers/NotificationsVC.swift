@@ -1,5 +1,5 @@
 //
-//  FriendsViewController.swift
+//  NotificationsVC.swift
 //  InstagramReplica
 //
 //  Created by Joshua Shinkle on 6/9/20.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class FriendsViewController: UIViewController {
+class NotificationsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

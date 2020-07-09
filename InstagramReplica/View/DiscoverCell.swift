@@ -43,6 +43,13 @@ class DiscoverCell: UITableViewCell {
         self.textLabel?.text = "Username"
     }
     
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        
+//        textLabel?.frame = CGRect(x: 68, y: textLabel!.frame.origin.y - 2, width: (textLabel?.frame.width)!, height: (textLabel?.frame.height)!)
+//        textLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+//    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

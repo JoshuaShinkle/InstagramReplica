@@ -17,15 +17,21 @@ class ProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     // MARK: - Properties
 
     var user: UserProfile?
+    var userFromDiscover: UserProfile?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.collectionView?.backgroundColor = .white
+        
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView!.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         
-        fetchCurrentUserData()
+        
+        if userFromDiscover == nil {
+            fetchCurrentUserData()
+        }
     }
 
     // MARK: - UICollectionView
@@ -47,17 +53,11 @@ class ProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! ProfileHeader
         
-        let currentUid = Auth.auth().currentUser?.uid
-        
-        Database.database().reference().child("users").child(currentUid!).observeSingleEvent(of: .value) { (snapshot) in
-            if let dict = snapshot.value as? [String:Any],
-                let username = dict["username"] as? String,
-                let photoURL = dict["photoURL"] as? String,
-                let url = URL(string: photoURL) {
-                let user = UserProfile(uid: snapshot.key, username: username, photoURL: url)
-                self.navigationItem.title = user.username
-                header.user = user
-            }
+        if let user = self.user {
+            header.user = user
+        } else if let userFromDiscover = self.userFromDiscover {
+            header.user = userFromDiscover
+            navigationItem.title = userFromDiscover.username
         }
         
         return header
@@ -73,6 +73,18 @@ class ProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     
     func fetchCurrentUserData() {
                 
+        guard let currentUid = Auth.auth().currentUser?.uid else {return}
         
+        Database.database().reference().child("users").child(currentUid).observeSingleEvent(of: .value) { (snapshot) in
+            if let dict = snapshot.value as? [String:Any],
+                let username = dict["username"] as? String,
+                let photoURL = dict["photoURL"] as? String,
+                let url = URL(string: photoURL) {
+                let user = UserProfile(uid: snapshot.key, username: username, photoURL: url)
+                self.user = user
+                self.navigationItem.title = user.username
+                self.collectionView?.reloadData()
+            }
+        }
     }
 }

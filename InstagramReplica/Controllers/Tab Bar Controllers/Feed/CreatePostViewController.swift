@@ -15,7 +15,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var captionText: UITextView!
     @IBOutlet weak var profileImage: UIImageView!
 
-    var user: User!
+    var user: UserAuth!
             
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
         
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
-            self.user = User(authData: user)
+            self.user = UserAuth(authData: user)
             let usersRef = Database.database().reference(withPath: "users")
             usersRef.child("\(user.uid)").child("photoURL").observe(.value, with: { snapshot in
                 let url = snapshot.value as? String
@@ -45,7 +45,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
         
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
-            self.user = User(authData: user)
+            self.user = UserAuth(authData: user)
             let usersRef = Database.database().reference(withPath: "users")
             usersRef.child("\(user.uid)").child("username").observe(.value, with: { snapshot in
                 let name = snapshot.value

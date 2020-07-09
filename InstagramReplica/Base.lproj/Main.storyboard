@@ -186,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="1906" y="116"/>
         </scene>
-        <!--Friends View Controller-->
+        <!--NotificationsVC-->
         <scene sceneID="9LH-Hv-Ut5">
             <objects>
-                <viewController id="NnE-ba-TzQ" customClass="FriendsViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NnE-ba-TzQ" customClass="NotificationsVC" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qDv-UL-49z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,7 +198,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Friends" id="6ls-Uz-KVh"/>
+                                    <navigationItem title="Notifications" id="6ls-Uz-KVh"/>
                                 </items>
                             </navigationBar>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lNn-rs-ZEW">
@@ -210,7 +210,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="mdV-qb-dxI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="person.2" catalog="system" id="u2N-Zx-fTU"/>
+                    <tabBarItem key="tabBarItem" title="" image="bell" catalog="system" id="u2N-Zx-fTU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REx-vY-zKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -230,7 +230,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Chat" id="tRn-Wd-dJU">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil.and.ellipsis.rectangle" catalog="system" id="u8h-nh-caR"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil.and.ellipsis.rectangle" catalog="system" id="u8h-nh-caR">
+                                            <connections>
+                                                <segue destination="bhE-Zi-Nng" kind="show" id="4bl-re-Pdw"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -300,10 +304,9 @@
         <!--Profile View Controller-->
         <scene sceneID="6sm-9A-3cB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XUf-Us-9rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="ProfileViewController" id="bhE-Zi-Nng" customClass="ProfileViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bhE-Zi-Nng" customClass="ProfileViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RPw-1W-Z8M">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdB-io-kKO">
@@ -334,7 +337,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ohv-Lg-8MF">
-                                <rect key="frame" x="148" y="107" width="119" height="119"/>
+                                <rect key="frame" x="148" y="63" width="119" height="119"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ohv-Lg-8MF" secondAttribute="height" multiplier="1:1" id="47g-Zm-r34"/>
@@ -357,12 +360,14 @@
                         <viewLayoutGuide key="safeArea" id="JhT-VJ-xFo"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="Y4p-3L-81r"/>
+                    <navigationItem key="navigationItem" id="3gb-9H-Yh0"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="profileImage" destination="ohv-Lg-8MF" id="JWG-2q-BjB"/>
                         <outlet property="usernameLabel" destination="VnO-gW-dXi" id="fCO-te-Bvf"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XUf-Us-9rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4342" y="1553"/>
         </scene>
@@ -736,7 +741,7 @@
         <!--Discover-->
         <scene sceneID="xfa-Ns-j2A">
             <objects>
-                <tableViewController id="5Tl-C6-ibU" customClass="DiscoverViewController" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5Tl-C6-ibU" customClass="DiscoverVC" customModule="InstagramReplica" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ELy-bq-YA8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -769,6 +774,7 @@
         <segue reference="gHQ-yp-cry"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="camera" catalog="system" width="128" height="96"/>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
@@ -778,7 +784,6 @@
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
     </resources>
 </document>

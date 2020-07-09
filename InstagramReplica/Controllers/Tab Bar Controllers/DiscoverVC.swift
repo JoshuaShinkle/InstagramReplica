@@ -1,5 +1,5 @@
 //
-//  DiscoverViewController.swift
+//  DiscoverVC.swift
 //  InstagramReplica
 //
 //  Created by Joshua Shinkle on 7/7/20.
@@ -11,7 +11,7 @@ import Firebase
 
 private let reuseIdentifier = "DiscoverUserCell"
 
-class DiscoverViewController: UITableViewController {
+class DiscoverVC: UITableViewController {
     
     var users = [UserProfile]()
 
@@ -38,18 +38,23 @@ class DiscoverViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let user = users[indexPath.row]
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let profileViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-//        self.present(profileViewController, animated: true, completion: nil)
-        profileViewController.loadUserFromDiscover = user
-        navigationController?.pushViewController(profileViewController, animated: true)
+        
+        let profileVC = ProfileVC(collectionViewLayout: UICollectionViewFlowLayout())
+        
+        profileVC.userFromDiscover = user
+        
+        navigationController?.pushViewController(profileVC, animated: true)
     
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! DiscoverCell
+        
         cell.user = users[indexPath.row]
+        
         return cell
     }
     

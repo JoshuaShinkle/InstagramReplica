@@ -11,7 +11,7 @@ import Firebase
 
 class TabBarController: UITabBarController {
         
-    var user: User!
+    var user: UserAuth!
     var username = "Placeholder"
     let onlineRef = Database.database().reference(withPath: "online")
     let usersRef = Database.database().reference(withPath: "users")
@@ -21,7 +21,7 @@ class TabBarController: UITabBarController {
         
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
-            self.user = User(authData: user)
+            self.user = UserAuth(authData: user)
             let currentUserRef = self.onlineRef.child(self.user.uid)
             if self.username != "Placeholder" {
                 self.usersRef.child("\(self.user.uid)").child("username").setValue(self.username)

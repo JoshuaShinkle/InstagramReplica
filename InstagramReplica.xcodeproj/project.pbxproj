@@ -25,13 +25,13 @@
 		BA6CD72424A395DD00778CD3 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6CD72324A395DD00778CD3 /* ImageService.swift */; };
 		BA8C565524B63F8B00CE8121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA8C565424B63F8B00CE8121 /* Assets.xcassets */; };
 		BA9871D92493CE0300B124F6 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9871D82493CE0300B124F6 /* LocationViewController.swift */; };
-		BA99525B24B4D77E0054355A /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99525A24B4D77E0054355A /* DiscoverViewController.swift */; };
+		BA99525B24B4D77E0054355A /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99525A24B4D77E0054355A /* DiscoverVC.swift */; };
 		BA99525D24B4EF6F0054355A /* DiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99525C24B4EF6F0054355A /* DiscoverCell.swift */; };
 		BAA4491C2493AA8F004AB6B5 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4491B2493AA8F004AB6B5 /* CreatePostViewController.swift */; };
 		BAAAE15B248FFEFA00ED2D68 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */; };
 		BAAAE15D24901F6B00ED2D68 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE15C24901F6B00ED2D68 /* FeedViewController.swift */; };
 		BAAAE1622490228200ED2D68 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1612490228200ED2D68 /* ChatViewController.swift */; };
-		BAAAE1642490228C00ED2D68 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1632490228C00ED2D68 /* FriendsViewController.swift */; };
+		BAAAE1642490228C00ED2D68 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1632490228C00ED2D68 /* NotificationsVC.swift */; };
 		BAAAE1662490229800ED2D68 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAE1652490229800ED2D68 /* ProfileViewController.swift */; };
 		BAC0D69F24A4035C0042EEFF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0D69E24A4035C0042EEFF /* Extensions.swift */; };
 		BAD21F2F24A27EC5008BC725 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD21F2E24A27EC5008BC725 /* UserService.swift */; };
@@ -60,13 +60,13 @@
 		BA6CD72324A395DD00778CD3 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		BA8C565424B63F8B00CE8121 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
 		BA9871D82493CE0300B124F6 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		BA99525A24B4D77E0054355A /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		BA99525A24B4D77E0054355A /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		BA99525C24B4EF6F0054355A /* DiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
 		BAA4491B2493AA8F004AB6B5 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BAAAE15C24901F6B00ED2D68 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		BAAAE1612490228200ED2D68 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		BAAAE1632490228C00ED2D68 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		BAAAE1632490228C00ED2D68 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 		BAAAE1652490229800ED2D68 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BAC0D69E24A4035C0042EEFF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BAD21F2E24A27EC5008BC725 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -103,6 +103,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA0BC20F24B776A400D098F0 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				BAAAE15C24901F6B00ED2D68 /* FeedViewController.swift */,
+				BAA4491B2493AA8F004AB6B5 /* CreatePostViewController.swift */,
+				BA9871D82493CE0300B124F6 /* LocationViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		BA0BC21024B776BF00D098F0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BA32D1E424B6131500868F83 /* ProfileVC.swift */,
+				BAAAE1652490229800ED2D68 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		BA1B188824A2488100F4DF6F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,12 +153,11 @@
 		BA24337B248E623F00C1CB55 /* InstagramReplica */ = {
 			isa = PBXGroup;
 			children = (
-				BAC0D69E24A4035C0042EEFF /* Extensions.swift */,
 				BA1B188824A2488100F4DF6F /* Models */,
 				BA243390248E6E1F00C1CB55 /* Controllers */,
 				BA8C565624B6449900CE8121 /* View */,
-				BA6CD72224A395AB00778CD3 /* Cells */,
 				BA6CD72524A395E400778CD3 /* Services */,
+				BAC0D69E24A4035C0042EEFF /* Extensions.swift */,
 				BA24337C248E623F00C1CB55 /* AppDelegate.swift */,
 				BA24337E248E623F00C1CB55 /* SceneDelegate.swift */,
 				BA243395248E813700C1CB55 /* GoogleService-Info.plist */,
@@ -155,21 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				BA99525E24B4F68D0054355A /* Getting In */,
-				BAA4491B2493AA8F004AB6B5 /* CreatePostViewController.swift */,
-				BA9871D82493CE0300B124F6 /* LocationViewController.swift */,
 				BAAAE15E2490225700ED2D68 /* Tab Bar Controllers */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		BA6CD72224A395AB00778CD3 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				BA1B188224A2388900F4DF6F /* PostCell.swift */,
-				BA1B188324A2388900F4DF6F /* PostCell.xib */,
-				BA99525C24B4EF6F0054355A /* DiscoverCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		BA6CD72524A395E400778CD3 /* Services */ = {
@@ -184,7 +190,10 @@
 		BA8C565624B6449900CE8121 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA1B188224A2388900F4DF6F /* PostCell.swift */,
+				BA1B188324A2388900F4DF6F /* PostCell.xib */,
 				BA32D1E624B621B400868F83 /* ProfileHeader.swift */,
+				BA99525C24B4EF6F0054355A /* DiscoverCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,12 +212,11 @@
 			isa = PBXGroup;
 			children = (
 				BAAAE15A248FFEFA00ED2D68 /* TabBarController.swift */,
-				BAAAE15C24901F6B00ED2D68 /* FeedViewController.swift */,
+				BA0BC20F24B776A400D098F0 /* Feed */,
 				BAAAE1612490228200ED2D68 /* ChatViewController.swift */,
-				BA99525A24B4D77E0054355A /* DiscoverViewController.swift */,
-				BAAAE1632490228C00ED2D68 /* FriendsViewController.swift */,
-				BA32D1E424B6131500868F83 /* ProfileVC.swift */,
-				BAAAE1652490229800ED2D68 /* ProfileViewController.swift */,
+				BA99525A24B4D77E0054355A /* DiscoverVC.swift */,
+				BAAAE1632490228C00ED2D68 /* NotificationsVC.swift */,
+				BA0BC21024B776BF00D098F0 /* Profile */,
 			);
 			path = "Tab Bar Controllers";
 			sourceTree = "<group>";
@@ -323,10 +331,10 @@
 				BA32D1E724B621B400868F83 /* ProfileHeader.swift in Sources */,
 				BA24337F248E623F00C1CB55 /* SceneDelegate.swift in Sources */,
 				BAD21F3124A281F6008BC725 /* UserProfile.swift in Sources */,
-				BA99525B24B4D77E0054355A /* DiscoverViewController.swift in Sources */,
+				BA99525B24B4D77E0054355A /* DiscoverVC.swift in Sources */,
 				BA9871D92493CE0300B124F6 /* LocationViewController.swift in Sources */,
 				BAAAE1662490229800ED2D68 /* ProfileViewController.swift in Sources */,
-				BAAAE1642490228C00ED2D68 /* FriendsViewController.swift in Sources */,
+				BAAAE1642490228C00ED2D68 /* NotificationsVC.swift in Sources */,
 				BAC0D69F24A4035C0042EEFF /* Extensions.swift in Sources */,
 				BA243394248E749D00C1CB55 /* SignUpViewController.swift in Sources */,
 				BA1B188724A2435400F4DF6F /* Post.swift in Sources */,

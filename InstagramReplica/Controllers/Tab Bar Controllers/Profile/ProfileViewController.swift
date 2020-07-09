@@ -11,8 +11,7 @@ import Firebase
 
 class ProfileViewController: UIViewController {
     
-    var user: User!
-    var loadUserFromDiscover: UserProfile?
+    var user: UserAuth!
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -22,13 +21,9 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let loadUserFromDiscover = self.loadUserFromDiscover {
-            print(loadUserFromDiscover.username)
-        }
-        
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
-            self.user = User(authData: user)
+            self.user = UserAuth(authData: user)
             let usersRef = Database.database().reference(withPath: "users")
             usersRef.child("\(user.uid)").child("photoURL").observe(.value, with: { snapshot in
                 let url = snapshot.value as? String
@@ -49,7 +44,7 @@ class ProfileViewController: UIViewController {
         
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
-            self.user = User(authData: user)
+            self.user = UserAuth(authData: user)
             let usersRef = Database.database().reference(withPath: "users")
             usersRef.child("\(user.uid)").child("username").observe(.value, with: { snapshot in
                 let name = snapshot.value
